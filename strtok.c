@@ -10,33 +10,23 @@ int main(void)
 	char *trunks;
 	int i;
 
-	strcpy(stc,str);
+	strcpy(stc, str);
 	trunks = strtok(stc, delim);
-	printf("%s\n", trunks);
+	/*printf("%s\n", trunks);*/
 
-	trunks = strtok(NULL, delim);
-	printf("%s\n", trunks);
+	while (trunks != NULL)
+	{
+		printf("%s\n", trunks);
+		trunks = strtok(NULL, delim);
+	}
 
-	trunks = strtok(NULL, delim);
-        printf("%s\n", trunks);
-
-	trunks = strtok(NULL, delim);
-        printf("%s\n", trunks);
-
-	trunks = strtok(NULL, delim);
-        printf("%s\n", trunks);
-
-	trunks = strtok(NULL, delim);
-        printf("%s\n", trunks);
-
-	trunks = strtok(NULL, delim);
-        printf("%s\n", trunks);
-
-	trunks = strtok(NULL, delim);
-	if (trunks == NULL)
-		printf("Last part is null");
-	else
-		printf("It is not null");
+	for (i = 0; i < 35; i++)
+	{
+		if (stc[i] == '\0')
+			printf("\\0");
+		else
+		printf("%o", stc[i]);
+	}
 
 	return (0);
 }
